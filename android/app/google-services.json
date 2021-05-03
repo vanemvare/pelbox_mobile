@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1048016431187",
+    "project_id": "pelbox-976cb",
+    "storage_bucket": "pelbox-976cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048016431187:android:5932c802ac7b1f373e3ea6",
+        "android_client_info": {
+          "package_name": "com.example.pelbox_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1048016431187-h1cn9p4q90vmtmp96jh1p5c86lp773nk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pelbox_mobile",
+            "certificate_hash": "26c2dc515ebd4a714c514f55dd834d4635f29535"
+          }
+        },
+        {
+          "client_id": "1048016431187-4r5dg48t8n1a6pic06o3jla6vr9dn9pn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgIPvwIrbNRnLQ1-7kebSK2jAyDMCo_rE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1048016431187-4r5dg48t8n1a6pic06o3jla6vr9dn9pn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
