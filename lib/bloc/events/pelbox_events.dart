@@ -16,11 +16,11 @@ class GetBoxDismantle extends PelBoxEvent {
   GetBoxDismantle(String accessToken) : super(accessToken);
 }
 
-
 class UpdateSecurityKey extends PelBoxEvent {
   String securityKey;
 
-  UpdateSecurityKey(String accessToken, String securityKey) : super(accessToken) {
+  UpdateSecurityKey(String accessToken, String securityKey)
+      : super(accessToken) {
     this.securityKey = securityKey;
   }
 }
@@ -48,7 +48,16 @@ class UpdateDismantle extends PelBoxEvent {
 class UpdateExpandingValue extends PelBoxEvent {
   int expandingValue;
 
-  UpdateExpandingValue(String accessToken, int expandingValue) : super(accessToken) {
+  UpdateExpandingValue(String accessToken, int expandingValue)
+      : super(accessToken) {
     this.expandingValue = expandingValue;
+  }
+}
+
+class UpdateDoorStatus extends PelBoxEvent {
+  String doorStatus;
+
+  UpdateDoorStatus(String accessToken, String doorStatus) : super(accessToken) {
+    this.doorStatus = doorStatus;
   }
 }

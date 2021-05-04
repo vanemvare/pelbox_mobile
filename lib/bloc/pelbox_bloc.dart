@@ -77,6 +77,13 @@ class PelBoxBloc {
       }).catchError((error) => print(error));
       return;
     }
+
+    if (event is UpdateDoorStatus) {
+      _updateDoorStatus(event.accessToken, event.doorStatus).then((response) {
+        _inPelBox.add(jsonDecode(response.body));
+      }).catchError((error) => print(error));
+      return;
+    }
   }
 
   Future<http.Response> _allSettings(String accessToken) async {
@@ -199,6 +206,26 @@ class PelBoxBloc {
     try {
       http.Response response = await http.put(
           'http://10.0.2.2:9002/set_expanding_value',
+          headers: {'Content-Type': 'application/json'},
+          body: jsonEncode(jsonMap));
+
+      return response;
+    } catch (error) {
+      return new http.Response(
+          "{\"success\": false, \"message\": \"Something went wrong\"}", 500);
+    }
+  }
+
+  Future<http.Response> _updateDoorStatus(
+      String accessToken, String doorStatus) async {
+    Map<String, dynamic> jsonMap = {
+      'access_token': accessToken,
+      'door_status': doorStatus,
+    };
+
+    try {
+      http.Response response = await http.put(
+          'http://10.0.2.2:9002/set_door_status',
           headers: {'Content-Type': 'application/json'},
           body: jsonEncode(jsonMap));
 

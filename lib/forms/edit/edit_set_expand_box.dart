@@ -43,10 +43,7 @@ class SetLockUnlockBox extends State<EditSetExpandBox> {
                 height: 43,
                 child: RaisedButton(
                   onPressed: () => _updateExpandingValue(_expandingValue - 1),
-                  child: Text(
-                    '-',
-                    style: TextStyle(color: Colors.white),
-                  ),
+                  child: Icon(Icons.remove, color: Colors.white),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5)),
                   color: Colors.red,
@@ -57,10 +54,7 @@ class SetLockUnlockBox extends State<EditSetExpandBox> {
                 height: 43,
                 child: RaisedButton(
                   onPressed: () => _updateExpandingValue(_expandingValue + 1),
-                  child: Text(
-                    '+',
-                    style: TextStyle(color: Colors.white),
-                  ),
+                  child: Icon(Icons.add, color: Colors.white),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5)),
                   color: Color(0xff078dff),
@@ -79,8 +73,38 @@ class SetLockUnlockBox extends State<EditSetExpandBox> {
                 height: 43,
                 child: RaisedButton(
                   onPressed: () => _updateExpandingValue(0),
+                  child: Icon(Icons.call_received, color: Colors.white),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5)),
+                  color: Colors.red,
+                ),
+              ),
+              Container(
+                width: 150,
+                height: 43,
+                child: RaisedButton(
+                  onPressed: () => _updateExpandingValue(8),
+                  child: Icon(Icons.north_east, color: Colors.white),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5)),
+                  color: Color(0xff078dff),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                width: 150,
+                height: 43,
+                child: RaisedButton(
+                  onPressed: () => print('CLOSE DOORS'),
                   child: Text(
-                    'MIN',
+                    'CLOSE DOOR',
                     style: TextStyle(color: Colors.white),
                   ),
                   shape: RoundedRectangleBorder(
@@ -92,9 +116,9 @@ class SetLockUnlockBox extends State<EditSetExpandBox> {
                 width: 150,
                 height: 43,
                 child: RaisedButton(
-                  onPressed: () => _updateExpandingValue(8),
+                  onPressed: () => print('OPEN DOORS'),
                   child: Text(
-                    'MAX',
+                    'OPEN DOOR',
                     style: TextStyle(color: Colors.white),
                   ),
                   shape: RoundedRectangleBorder(
@@ -103,7 +127,7 @@ class SetLockUnlockBox extends State<EditSetExpandBox> {
                 ),
               ),
             ],
-          )
+          ),
         ],
       ),
     );
