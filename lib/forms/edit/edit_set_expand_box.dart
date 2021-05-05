@@ -102,7 +102,7 @@ class SetLockUnlockBox extends State<EditSetExpandBox> {
                 width: 150,
                 height: 43,
                 child: RaisedButton(
-                  onPressed: () => print('CLOSE DOORS'),
+                  onPressed: () => _updateDoorStatus("close"),
                   child: Text(
                     'CLOSE DOOR',
                     style: TextStyle(color: Colors.white),
@@ -116,7 +116,7 @@ class SetLockUnlockBox extends State<EditSetExpandBox> {
                 width: 150,
                 height: 43,
                 child: RaisedButton(
-                  onPressed: () => print('OPEN DOORS'),
+                  onPressed: () => _updateDoorStatus("open"),
                   child: Text(
                     'OPEN DOOR',
                     style: TextStyle(color: Colors.white),
@@ -156,6 +156,19 @@ class SetLockUnlockBox extends State<EditSetExpandBox> {
     if (response['success'] == false) {
       _createAlertDialog(
           context, 'Error', 'There is a problem with updating expanding value');
+    }
+  }
+
+  Future<void> _updateDoorStatus(String status) async {
+    final prefs = await SharedPreferences.getInstance();
+    String accessToken = prefs.getString('access_token');
+
+    _pelboxBloc.pelboxEventSink.add(UpdateDoorStatus(accessToken, status));
+    Map response = await _pelboxBloc.pelbox.first;
+
+    if (response['success'] == false) {
+      _createAlertDialog(
+          context, 'Error', 'There is a problem with updating door status');
     }
   }
 
